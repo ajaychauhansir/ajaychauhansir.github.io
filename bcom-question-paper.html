@@ -92,6 +92,7 @@ header p {
 }
 
 .year-card {
+    display: block;
     background: #faf5fc;
     border: 1px solid #e1bee7;
     border-radius: 10px;
@@ -99,10 +100,13 @@ header p {
     text-align: center;
     font-weight: bold;
     color: #8e24aa;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
 .year-card:hover {
     background: #f3e5f5;
+    transform: translateY(-2px);
 }
 
 footer {
@@ -138,7 +142,6 @@ footer {
 
 </header>
 
-
 <div class="container">
 
 <a href="question-papers.html" class="back">← Back to Courses</a>
@@ -151,11 +154,9 @@ footer {
 
 </div>
 
-
 <div id="semester-container"></div>
 
 </div>
-
 
 <footer>
 
@@ -194,7 +195,65 @@ for (let i = 1; i <= semesters; i++) {
 
     years.forEach(year => {
 
-        yearHTML += `<div class="year-card">${year}</div>`;
+        let yearLink = "#";
+
+        /*
+        SEMESTER 1 KE YEARS KO FOLDER SE CONNECT KIYA HAI
+        */
+
+        if (i === 1) {
+
+            if (year === "2012") {
+                yearLink = "BCom/Sem-1/2012/index.html";
+            }
+
+            else if (year === "2016") {
+                yearLink = "BCom/Sem-1/2016/index.html";
+            }
+
+            else if (year === "2017") {
+                yearLink = "BCom/Sem-1/2017/index.html";
+            }
+
+            else if (year === "2018") {
+                yearLink = "BCom/Sem-1/2018/index.html";
+            }
+
+            else if (year === "2019") {
+                yearLink = "BCom/Sem-1/2019/index.html";
+            }
+
+            else if (year === "2020") {
+                yearLink = "BCom/Sem-1/2020/index.html";
+            }
+
+            else if (year === "2021") {
+                yearLink = "BCom/Sem-1/2021/index.html";
+            }
+
+            else if (year === "2022") {
+                yearLink = "BCom/Sem-1/2022/index.html";
+            }
+
+            else if (year === "2023 NEP") {
+                yearLink = "BCom/Sem-1/2023-NEP/index.html";
+            }
+
+            else if (year === "2024 NEP") {
+                yearLink = "BCom/Sem-1/2024-NEP/index.html";
+            }
+
+            else if (year === "2025 NEP") {
+                yearLink = "BCom/Sem-1/2025-NEP/index.html";
+            }
+
+        }
+
+        yearHTML += `
+            <a href="${yearLink}" class="year-card">
+                ${year}
+            </a>
+        `;
 
     });
 
