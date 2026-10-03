@@ -150,7 +150,7 @@ footer {
 
 <h2>B.Com — Select Semester</h2>
 
-<p>Select a semester to view year-wise question papers.</p>
+<p>Select a semester and year to view question papers.</p>
 
 </div>
 
@@ -164,28 +164,25 @@ footer {
 
 </footer>
 
-
 <script>
 
-const semesters = 6;
-
 const years = [
-    "2012",
-    "2016",
-    "2017",
-    "2018",
-    "2019",
-    "2020",
-    "2021",
-    "2022",
-    "2023 NEP",
-    "2024 NEP",
-    "2025 NEP"
+    { name: "2012", folder: "2012" },
+    { name: "2016", folder: "2016" },
+    { name: "2017", folder: "2017" },
+    { name: "2018", folder: "2018" },
+    { name: "2019", folder: "2019" },
+    { name: "2020", folder: "2020" },
+    { name: "2021", folder: "2021" },
+    { name: "2022", folder: "2022" },
+    { name: "2023 NEP", folder: "2023-NEP" },
+    { name: "2024 NEP", folder: "2024-NEP" },
+    { name: "2025 NEP", folder: "2025-NEP" }
 ];
 
 const container = document.getElementById("semester-container");
 
-for (let i = 1; i <= semesters; i++) {
+for (let semester = 1; semester <= 6; semester++) {
 
     const semesterBox = document.createElement("div");
 
@@ -195,63 +192,12 @@ for (let i = 1; i <= semesters; i++) {
 
     years.forEach(year => {
 
-        let yearLink = "#";
-
-        /*
-        SEMESTER 1 KE YEARS KO FOLDER SE CONNECT KIYA HAI
-        */
-
-        if (i === 1) {
-
-            if (year === "2012") {
-                yearLink = "BCom/Sem-1/2012/index.html";
-            }
-
-            else if (year === "2016") {
-                yearLink = "BCom/Sem-1/2016/index.html";
-            }
-
-            else if (year === "2017") {
-                yearLink = "BCom/Sem-1/2017/index.html";
-            }
-
-            else if (year === "2018") {
-                yearLink = "BCom/Sem-1/2018/index.html";
-            }
-
-            else if (year === "2019") {
-                yearLink = "BCom/Sem-1/2019/index.html";
-            }
-
-            else if (year === "2020") {
-                yearLink = "BCom/Sem-1/2020/index.html";
-            }
-
-            else if (year === "2021") {
-                yearLink = "BCom/Sem-1/2021/index.html";
-            }
-
-            else if (year === "2022") {
-                yearLink = "BCom/Sem-1/2022/index.html";
-            }
-
-            else if (year === "2023 NEP") {
-                yearLink = "BCom/Sem-1/2023-NEP/index.html";
-            }
-
-            else if (year === "2024 NEP") {
-                yearLink = "BCom/Sem-1/2024-NEP/index.html";
-            }
-
-            else if (year === "2025 NEP") {
-                yearLink = "BCom/Sem-1/2025-NEP/index.html";
-            }
-
-        }
+        const yearLink =
+            `BCom/Sem-${semester}/${year.folder}/index.html`;
 
         yearHTML += `
             <a href="${yearLink}" class="year-card">
-                ${year}
+                ${year.name}
             </a>
         `;
 
@@ -260,7 +206,7 @@ for (let i = 1; i <= semesters; i++) {
     semesterBox.innerHTML = `
 
         <div class="semester-title">
-            Semester ${i}
+            Semester ${semester}
         </div>
 
         <div class="year-grid">
@@ -275,4 +221,5 @@ for (let i = 1; i <= semesters; i++) {
 </script>
 
 </body>
+
 </html>
