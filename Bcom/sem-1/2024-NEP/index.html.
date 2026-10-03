@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B.Com Sem-1 | 2024 NEP</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #f3f5f9; margin: 0; color: #222; }
+  header { background: #1f3a93; color: #fff; padding: 20px 16px; text-align: center; }
+  header h1 { margin: 0; font-size: 1.4rem; }
+  header p { margin: 6px 0 0; font-size: .9rem; opacity: .85; }
+  .back { display: inline-block; margin: 14px 16px 0; color: #1f3a93; text-decoration: none; font-size: .95rem; }
+  .wrap { max-width: 700px; margin: 0 auto; padding: 12px 16px 30px; }
+  #search { width: 100%; padding: 12px; font-size: 1rem; border: 1px solid #ccd; border-radius: 8px; margin-bottom: 14px; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { margin-bottom: 10px; }
+  li a { display: flex; align-items: center; gap: 12px; background: #fff; padding: 14px; border-radius: 10px;
+         text-decoration: none; color: #222; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  li a:hover { background: #eef2ff; }
+  .icon { background: #d93025; color: #fff; font-size: .7rem; font-weight: bold; padding: 6px 7px; border-radius: 4px; }
+  .name { flex: 1; font-size: 1rem; }
+  .tag { font-size: .7rem; padding: 3px 8px; border-radius: 20px; background: #e6f4ea; color: #137333; }
+  .tag.old { background: #fce8e6; color: #c5221f; }
+</style>
+</head>
+<body>
+<header>
+  <h1>B.Com Semester 1</h1>
+  <p>2024 NEP - Study Material</p>
+</header>
+
+<a class="back" href="../index.html">&larr; Back</a>
+
+<div class="wrap">
+  <input id="search" type="text" placeholder="Subject search karein...">
+  <ul id="list">
+    <li><a href="Accountancy%201%20NEP.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Accountancy 1</span><span class="tag">NEP</span></a></li>
+    <li><a href="Accountancy%201%20old.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Accountancy 1</span><span class="tag old">Old</span></a></li>
+    <li><a href="BUSINESS%20ECONOMICS%20OLD.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Business Economics</span><span class="tag old">Old</span></a></li>
+    <li><a href="Computer%20Application%20-1%20NEP.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Computer Application 1</span><span class="tag">NEP</span></a></li>
+    <li><a href="Economics%20101.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Economics 101</span></a></li>
+    <li><a href="English%20104%20nep.pdf" target="_blank"><span class="icon">PDF</span><span class="name">English 104</span><span class="tag">NEP</span></a></li>
+    <li><a href="english.pdf" target="_blank"><span class="icon">PDF</span><span class="name">English</span></a></li>
+    <li><a href="Financial%20Accounting%20-1%20nep.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Financial Accounting 1</span><span class="tag">NEP</span></a></li>
+    <li><a href="financial%20accounting%20OLD.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Financial Accounting</span><span class="tag old">Old</span></a></li>
+    <li><a href="Fundamentals%20of%20Entrepreneurship%201%20NEP.pdf" target="_blank"><span class="icon">PDF</span><span class="name">Fundamentals of Entrepreneurship 1</span><span class="tag">NEP</span></a></li>
+    <li><a href="HRM%20NEP.pdf" target="_blank"><span class="icon">PDF</span><span class="name">HRM</span><span class="tag">NEP</span></a></li>
+    <li><a href="HRM.pdf" target="_blank"><span class="icon">PDF</span><span class="name">HRM</span></a></li>
+  </ul>
+</div>
+
+<script>
+  document.getElementById('search').addEventListener('input', function () {
+    var q = this.value.toLowerCase();
+    document.querySelectorAll('#list li').forEach(function (li) {
+      li.style.display = li.textContent.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
