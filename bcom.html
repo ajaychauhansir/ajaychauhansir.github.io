@@ -3,218 +3,531 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.Com Study Material | Ajay Chauhan</title>
 
-    <title>B.Com Study Material | Ajay Chauhan</title>
+<style>
 
-    <link rel="stylesheet" href="css/style.css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.header nav a:hover {
+    color: #93c5fd;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    text-align: center;
+    padding: 75px 20px 70px;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(96,165,250,0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(167,139,250,0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #172554,
+            #312e81,
+            #1e3a8a
+        );
+}
+
+.hero h1 {
+    font-size: 44px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #e0e7ff;
+}
+
+
+/* ================= SEMESTER CARDS ================= */
+
+.options {
+    max-width: 1100px;
+    margin: 60px auto 80px;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.card {
+    position: relative;
+    overflow: hidden;
+
+    background: white;
+
+    padding: 35px 30px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+    color: #1f2937;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 28px rgba(15,23,42,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(15,23,42,0.14);
+}
+
+
+/* TOP LINE */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #06b6d4
+    );
+}
+
+
+/* ICON */
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #eff6ff;
+
+    font-size: 34px;
+
+    margin-bottom: 20px;
+}
+
+
+/* DIFFERENT CARD COLORS */
+
+.card:nth-child(2)::before {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.card:nth-child(2) .card-icon {
+    background: #f0fdf4;
+}
+
+.card:nth-child(3)::before {
+    background: linear-gradient(90deg, #dc2626, #f97316);
+}
+
+.card:nth-child(3) .card-icon {
+    background: #fff7ed;
+}
+
+.card:nth-child(4)::before {
+    background: linear-gradient(90deg, #ea580c, #f59e0b);
+}
+
+.card:nth-child(4) .card-icon {
+    background: #fff7ed;
+}
+
+.card:nth-child(5)::before {
+    background: linear-gradient(90deg, #7c3aed, #a855f7);
+}
+
+.card:nth-child(5) .card-icon {
+    background: #f5f3ff;
+}
+
+.card:nth-child(6)::before {
+    background: linear-gradient(90deg, #0891b2, #06b6d4);
+}
+
+.card:nth-child(6) .card-icon {
+    background: #ecfeff;
+}
+
+
+/* TITLE */
+
+.card h2 {
+    color: #172554;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+
+/* TEXT */
+
+.card p {
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+
+/* LINK */
+
+.card span {
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0f172a;
+    color: #cbd5e1;
+
+    text-align: center;
+
+    padding: 30px 15px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .header nav {
+        gap: 18px;
+    }
+
+    .header nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    .card {
+        padding: 30px 24px;
+    }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- Header -->
 
-    <header class="header">
+<!-- ================= HEADER ================= -->
 
-        <div class="logo">
-            Ajay Chauhan
+<header class="header">
+
+    <div class="logo">
+        Ajay Chauhan
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="study-material.html">
+            Study Material
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <h1>
+        B.Com Study Material
+    </h1>
+
+    <p>
+        Select your semester to access
+        study material.
+    </p>
+
+</section>
+
+
+<!-- ================= SEMESTERS ================= -->
+
+<section class="options">
+
+
+    <!-- SEMESTER 1 -->
+
+    <a href="bcom-semester-1.html" class="card">
+
+        <div class="card-icon">
+            📘
         </div>
 
-        <nav>
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="study-material.html">
-                Study Material
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- Page Heading -->
-
-    <section class="hero">
-
-        <h1>
-            B.Com Study Material
-        </h1>
+        <h2>
+            Semester 1
+        </h2>
 
         <p>
-            Select your semester to access
+            B.Com Semester 1
             study material.
         </p>
 
-    </section>
+        <span>
+            Open →
+        </span>
+
+    </a>
 
 
-    <!-- Semester Section -->
+    <!-- SEMESTER 2 -->
 
-    <section class="options">
+    <a href="bcom-semester-2.html" class="card">
 
+        <div class="card-icon">
+            📗
+        </div>
 
-        <!-- Semester 1 -->
-
-        <a href="bcom-semester-1.html" class="card">
-
-            <div class="card-icon">
-                📘
-            </div>
-
-            <h2>
-                Semester 1
-            </h2>
-
-            <p>
-                B.Com Semester 1
-                study material.
-            </p>
-
-            <span>
-                Open →
-            </span>
-
-        </a>
-
-
-        <!-- Semester 2 -->
-
-        <a href="bcom-semester-2.html" class="card">
-
-            <div class="card-icon">
-                📗
-            </div>
-
-            <h2>
-                Semester 2
-            </h2>
-
-            <p>
-                B.Com Semester 2
-                study material.
-            </p>
-
-            <span>
-                Open →
-            </span>
-
-        </a>
-
-
-        <!-- Semester 3 -->
-
-        <a href="bcom-semester-3.html" class="card">
-
-            <div class="card-icon">
-                📕
-            </div>
-
-            <h2>
-                Semester 3
-            </h2>
-
-            <p>
-                B.Com Semester 3
-                study material.
-            </p>
-
-            <span>
-                Open →
-            </span>
-
-        </a>
-
-
-        <!-- Semester 4 -->
-
-        <a href="bcom-semester-4.html" class="card">
-
-            <div class="card-icon">
-                📙
-            </div>
-
-            <h2>
-                Semester 4
-            </h2>
-
-            <p>
-                B.Com Semester 4
-                study material.
-            </p>
-
-            <span>
-                Open →
-            </span>
-
-        </a>
-
-
-        <!-- Semester 5 -->
-
-        <a href="bcom-semester-5.html" class="card">
-
-            <div class="card-icon">
-                📔
-            </div>
-
-            <h2>
-                Semester 5
-            </h2>
-
-            <p>
-                B.Com Semester 5
-                study material.
-            </p>
-
-            <span>
-                Open →
-            </span>
-
-        </a>
-
-
-        <!-- Semester 6 -->
-
-        <a href="bcom-semester-6.html" class="card">
-
-            <div class="card-icon">
-                📚
-            </div>
-
-            <h2>
-                Semester 6
-            </h2>
-
-            <p>
-                B.Com Semester 6
-                study material.
-            </p>
-
-            <span>
-                Open →
-            </span>
-
-        </a>
-
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer>
+        <h2>
+            Semester 2
+        </h2>
 
         <p>
-            © 2026 Ajay Chauhan. All Rights Reserved.
+            B.Com Semester 2
+            study material.
         </p>
 
-    </footer>
+        <span>
+            Open →
+        </span>
+
+    </a>
+
+
+    <!-- SEMESTER 3 -->
+
+    <a href="bcom-semester-3.html" class="card">
+
+        <div class="card-icon">
+            📕
+        </div>
+
+        <h2>
+            Semester 3
+        </h2>
+
+        <p>
+            B.Com Semester 3
+            study material.
+        </p>
+
+        <span>
+            Open →
+        </span>
+
+    </a>
+
+
+    <!-- SEMESTER 4 -->
+
+    <a href="bcom-semester-4.html" class="card">
+
+        <div class="card-icon">
+            📙
+        </div>
+
+        <h2>
+            Semester 4
+        </h2>
+
+        <p>
+            B.Com Semester 4
+            study material.
+        </p>
+
+        <span>
+            Open →
+        </span>
+
+    </a>
+
+
+    <!-- SEMESTER 5 -->
+
+    <a href="bcom-semester-5.html" class="card">
+
+        <div class="card-icon">
+            📔
+        </div>
+
+        <h2>
+            Semester 5
+        </h2>
+
+        <p>
+            B.Com Semester 5
+            study material.
+        </p>
+
+        <span>
+            Open →
+        </span>
+
+    </a>
+
+
+    <!-- SEMESTER 6 -->
+
+    <a href="bcom-semester-6.html" class="card">
+
+        <div class="card-icon">
+            📚
+        </div>
+
+        <h2>
+            Semester 6
+        </h2>
+
+        <p>
+            B.Com Semester 6
+            study material.
+        </p>
+
+        <span>
+            Open →
+        </span>
+
+    </a>
+
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Ajay Chauhan. All Rights Reserved.
+    </p>
+
+</footer>
 
 
 </body>
