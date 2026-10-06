@@ -166,14 +166,15 @@ footer {
 
 <script>
 
-const defaultYears = [
+/* folder का नाम बिल्कुल GitHub के फ़ोल्डर जैसा होना चाहिए (बड़े-छोटे अक्षर समेत) */
+
+const sem1Years = [
     { name: "2012", folder: "2012" },
     { name: "2016", folder: "2016" },
     { name: "2017", folder: "2017" },
     { name: "2018", folder: "2018" },
     { name: "2019", folder: "2019" },
     { name: "2020", folder: "2020" },
-    { name: "2021", folder: "2021" },
     { name: "2022", folder: "2022" },
     { name: "2023 NEP", folder: "2023-NEP" },
     { name: "2024 NEP", folder: "2024-NEP" },
@@ -186,10 +187,10 @@ const sem3Years = [
     { name: "2017", folder: "2017" },
     { name: "2018", folder: "2018" },
     { name: "2019", folder: "2019" },
-    { name: "2021 (JULY)", folder: "2021-JULY-SEP" },
-    { name: "2021 (JAN)", folder: "2021-JAN" },
-    { name: "2022 (MAY-JUNE)", folder: "2022-MAY-JUNE" },
-    { name: "2022 (DEC)", folder: "2022-DEC" },
+    { name: "2021 (JAN)", folder: "2021-Jan" },
+    { name: "2021 (JULY)", folder: "2021-July" },
+    { name: "2022 (MAY-JUNE)", folder: "2022-May-June" },
+    { name: "2022 (DEC)", folder: "2022-Dec" },
     { name: "2023", folder: "2023" },
     { name: "2024 NEP", folder: "2024-NEP" },
     { name: "2025 NEP", folder: "2025-NEP" }
@@ -210,15 +211,17 @@ const sem5Years = [
 ];
 
 const yearsBySemester = {
+    1: sem1Years,
     3: sem3Years,
     5: sem5Years
 };
 
 const container = document.getElementById("semester-container");
 
-for (let semester = 1; semester <= 6; semester++) {
+/* अभी सिर्फ़ Sem 1, 3, 5 के फ़ोल्डर मौजूद हैं */
+for (const semester of [1, 3, 5]) {
 
-    const years = yearsBySemester[semester] || defaultYears;
+    const years = yearsBySemester[semester];
 
     const semesterBox = document.createElement("div");
 
